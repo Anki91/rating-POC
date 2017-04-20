@@ -1,0 +1,3 @@
+graft rating/templates
+graft rating/static
+include rating/schema.sql
