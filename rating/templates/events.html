@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en">
+	<head>   <meta charset="utf-8" />   
+	<title>Rating App</title>
+	<table border = 1>
+		<thead>
+			<td>EVENT_QUANTITY</td>
+			<td>EVENT_TYPE</td>
+			<td>EVENT_OCCURRENCE</td>
+		</thead>
+
+		{%for entry in entries%}
+		<tr>
+			<td>{{entry["event_quantity"]}}</td>
+			<td>{{entry["event_type"]}}</td>
+			<td>{{entry["event_occurrence"]}}</td>
+		</tr>
+			{%endfor%}
+	</table>
+
+        <table border = 1>
+                <thead>
+                        <td>CU_SMS</td>
+                        <td>CU_CALL</td>
+                        <td>CU_DATA</td>
+                </thead>
+
+                {%for entry in curr_usg%}
+                <tr>
+                        <td>{{entry["sms"]}}</td>
+                        <td>{{entry["calls"]}}</td>
+                        <td>{{entry["data"]}}</td>
+                </tr>
+                        {%endfor%}
+        </table>
+
+        <table border = 1>
+                <thead>
+                        <td>AU_SMS</td>
+                        <td>AU_CALL</td>
+                        <td>AU_DATA</td>
+                </thead>
+	        {%for entry in all_usg%}
+                <tr>
+                        <td>{{entry["sms"]}}</td>
+                        <td>{{entry["calls"]}}</td>
+                        <td>{{entry["data"]}}</td>
+                </tr>
+                        {%endfor%}
+
+        </table>
+
+	<a href="http://127.0.0.1:5000/addevent">Add event</a>
+	<a href="http://127.0.0.1:5000/convert">Convert</a>
+</body></html>
